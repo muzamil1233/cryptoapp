@@ -32,7 +32,8 @@ const Coins = () => {
   useEffect(() => {
     const fetchCoins = async () => {
       try {
-        const { data } = await axios.get(`${server}/coins/markets?vs_current=${currency} &page=${page}`);
+        const { data } = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&page=1
+${server}/coin`);
         setCoins(data);
         console.log(data);
         setLoading(false);
